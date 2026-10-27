@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/common/theme/app_colors.dart';
 import 'package:flutter_application_1/common/theme/app_text_theme.dart';
+import 'package:flutter_application_1/providers/theme_provider.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 
 class DrawerDesign extends StatelessWidget {
   const DrawerDesign({super.key});
@@ -59,6 +61,13 @@ class DrawerDesign extends StatelessWidget {
 
           // Theme Dropdown
           DropdownMenu<ThemeMode>(
+            initialSelection: context.watch<ThemeProvider>().mode,
+            onSelected: (ThemeMode ?value) {
+              if(value!=null){
+                context.read<ThemeProvider>().changeTheme(value);
+              }
+              
+            },
             width: 237.w,
 
             textStyle: AppTextStyle.styleS20W500.copyWith(
@@ -114,6 +123,7 @@ class DrawerDesign extends StatelessWidget {
               ),
 
               DropdownMenuEntry<ThemeMode>(
+                
                 value: ThemeMode.dark,
                 label: 'Dark',
                 style: ButtonStyle(
