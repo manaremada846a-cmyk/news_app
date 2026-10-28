@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/common/theme/app_colors.dart';
 import 'package:flutter_application_1/common/theme/app_text_theme.dart';
+import 'package:flutter_application_1/providers/main_screen_provider.dart';
 import 'package:flutter_application_1/providers/theme_provider.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
@@ -30,6 +31,9 @@ class DrawerDesign extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15.0),
             child: ListTile(
+              onTap: ()  { Provider.of<MainScreenProvider>(context,listen: false) .changeCatigory(null);
+Navigator.pop(context);
+              },
               contentPadding: const EdgeInsets.all(8),
               leading: const Icon(Icons.home_outlined),
               iconColor: AppColors.primarylight,
