@@ -9,21 +9,21 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  ListView(
-        children: [
-          Text(
-            "Good Morning\nHere is Some News For You",
-            style: context.textTheme.labelMedium,
-          ).symatricPadding(vertical: 10,horizontal: 20),
-          //...CategoriesEnum.values.map((e)=>HomeCards(categoriesEnum: e, iseven: false,).symatricPadding(vertical: 10,horizontal: 16),)
-          ...List.generate(
-            CategoriesEnum.values.length,
-            (index) => HomeCards(
-              categoriesEnum: CategoriesEnum.values[index],
-              iseven: index % 2 ==0,
-            ).symatricPadding(horizontal: 16, vertical: 7),
-          ),
-        ],
-      );
+    return ListView(
+      children: [
+        Text(
+          "Good Morning\nHere is Some News For You",
+          style: context.textTheme.labelMedium,
+        ).symatricPadding(vertical: 10, horizontal: 20),
+        //...CategoriesEnum.values.map((e)=>HomeCards(categoriesEnum: e, iseven: false,).symatricPadding(vertical: 10,horizontal: 16),)
+        ...List.generate(
+          CategoriesEnum.values.length,
+          (index) => HomeCards(
+            categoriesEnum: CategoriesEnum.values[index],
+            iseven: index % 2 == 0,
+          ).symatricPadding(horizontal: 16, vertical: 7),
+        ),
+      ],
+    );
   }
 }

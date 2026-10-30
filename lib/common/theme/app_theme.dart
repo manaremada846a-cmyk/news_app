@@ -5,12 +5,11 @@ import 'package:flutter_application_1/common/theme/app_text_theme.dart';
 class AppTheme {
   static ThemeData lightTheme = ThemeData(
     drawerTheme: DrawerThemeData(
-   clipBehavior: Clip.none,
-   
-  shape: const RoundedRectangleBorder(
-    borderRadius: BorderRadius.zero,
-  ),
-    ),hintColor: AppColors.primarydark,
+      clipBehavior: Clip.none,
+
+      shape: const RoundedRectangleBorder(borderRadius: BorderRadius.zero),
+    ),
+    hintColor: AppColors.primarydark,
     appBarTheme: AppBarTheme(
       foregroundColor: AppColors.primarydark,
       backgroundColor: AppColors.primarylight,
@@ -24,9 +23,10 @@ class AppTheme {
     textTheme: TextTheme(
       headlineLarge: AppTextStyle.styleS30W600.copyWith(
         color: AppColors.primarydark,
-      ),labelMedium: AppTextStyle.styleS24W500.copyWith(
+      ),
+      labelMedium: AppTextStyle.styleS24W500.copyWith(
         color: AppColors.primarydark,
-      ) ,
+      ),
 
       headlineMedium: AppTextStyle.styleS24W700.copyWith(
         color: AppColors.primarydark,
@@ -53,17 +53,18 @@ class AppTheme {
       ),
     ),
 
-   colorScheme: ColorScheme .fromSeed(seedColor: AppColors.primarylight,secondary: AppColors.primarydark)
+    colorScheme: ColorScheme.fromSeed(
+      seedColor: AppColors.primarylight,
+      secondary: AppColors.primarydark,
+    ),
   );
   static ThemeData darkTheme = ThemeData(
     drawerTheme: DrawerThemeData(
-     
-  clipBehavior: Clip.none,
- 
-  shape: const RoundedRectangleBorder(
-    borderRadius: BorderRadius.zero,
-  ),
-    ),hintColor: AppColors.primarylight,
+      clipBehavior: Clip.none,
+
+      shape: const RoundedRectangleBorder(borderRadius: BorderRadius.zero),
+    ),
+    hintColor: AppColors.primarylight,
     appBarTheme: AppBarTheme(
       foregroundColor: AppColors.primarylight,
       backgroundColor: AppColors.primarydark,
@@ -76,10 +77,10 @@ class AppTheme {
       headlineLarge: AppTextStyle.styleS30W600.copyWith(
         color: AppColors.primarylight,
       ),
-labelMedium: AppTextStyle.styleS24W500.copyWith(
+      labelMedium: AppTextStyle.styleS24W500.copyWith(
         color: AppColors.primarylight,
-      ) ,
-      
+      ),
+
       headlineMedium: AppTextStyle.styleS24W700.copyWith(
         color: AppColors.primarylight,
       ),
@@ -105,6 +106,9 @@ labelMedium: AppTextStyle.styleS24W500.copyWith(
       ),
     ),
 
-   colorScheme: ColorScheme .fromSeed(seedColor: AppColors.primarydark,secondary: AppColors.primarylight)
+    colorScheme: ColorScheme.fromSeed(
+      seedColor: AppColors.primarydark,
+      secondary: AppColors.primarylight,
+    ),
   );
 }

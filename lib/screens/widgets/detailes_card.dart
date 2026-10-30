@@ -20,18 +20,40 @@ class DetailesCard extends StatelessWidget {
         borderRadius: BorderRadius.all(Radius.circular(16.r)),
       ),
       child: Column(
-      spacing: 12.h,
+        spacing: 12.h,
         children: [
           ClipRRect(
-            
             borderRadius: BorderRadius.all(Radius.circular(16.r)),
-            child: Image.network(detailesCardModel.imageUrl,width:1.sw ,height: 220.h,fit: BoxFit.cover,)),
-          Text(detailesCardModel.title,style: context.textTheme.titleMedium!.copyWith(color: context.theme.hintColor),),
+            child: Image.network(
+              detailesCardModel.imageUrl,
+              width: 1.sw,
+              height: 220.h,
+              fit: BoxFit.cover,
+            ),
+          ),
+          Text(
+            detailesCardModel.title,
+            style: context.textTheme.titleMedium!.copyWith(
+              color: context.theme.hintColor,
+            ),
+          ),
           Row(
             mainAxisAlignment: .spaceBetween,
             children: [
-              Text("By: ${detailesCardModel.auther}",style: context.textTheme.labelMedium!.copyWith(fontSize: 12,color: AppColors.gray),),
-              Text(detailesCardModel.publishedAt,style: context.textTheme.labelMedium!.copyWith(fontSize: 12,color: AppColors.gray),),
+              Text(
+                "By: ${detailesCardModel.auther}",
+                style: context.textTheme.labelMedium!.copyWith(
+                  fontSize: 12,
+                  color: AppColors.gray,
+                ),
+              ),
+              Text(
+                detailesCardModel.publishedAt,
+                style: context.textTheme.labelMedium!.copyWith(
+                  fontSize: 12,
+                  color: AppColors.gray,
+                ),
+              ),
             ],
           ),
         ],

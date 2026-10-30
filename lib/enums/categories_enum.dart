@@ -1,4 +1,3 @@
- 
 import 'package:flutter_application_1/gen/assets.gen.dart';
 
 enum CategoriesEnum {
@@ -7,8 +6,9 @@ enum CategoriesEnum {
   Sports,
   Health,
   Sceince,
- 
- technologly, Entertaine;
+
+  technologly,
+  Entertaine;
 
   String get getImage {
     switch (this) {

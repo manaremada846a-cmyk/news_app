@@ -14,13 +14,13 @@ class MainScreen extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (BuildContext context) =>MainScreenProvider(),
       child: Consumer<MainScreenProvider>(
-        builder: (BuildContext context,Provider, _) {return  Scaffold(
+        builder: (BuildContext context, MainScreenProvider Provider, _) {return  Scaffold(
           drawer: DrawerDesign(),
           appBar: AppBar(
             title: Text("Home", style: TextStyle(color: context.theme.hintColor)),
             actions: [Icon(Icons.search_outlined, size: 24)],
           ),
-          body: Provider.categoriesEnum==null?HomeView() :HomeDetailesView() //HomeView()
+          body: Provider.categoriesEnum==null?HomeView() :HomeDetailesView(categoriesEnum: Provider.categoriesEnum!,) //HomeView()
         
         
         );  },

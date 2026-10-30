@@ -26,13 +26,20 @@ class DrawerDesign extends StatelessWidget {
               child: Text(
                 "News App",
                 style: theme.textTheme.headlineMedium!.copyWith(
-                  color: AppColors.primarydark),  ),
-            ),  ),
+                  color: AppColors.primarydark,
+                ),
+              ),
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15.0),
             child: ListTile(
-              onTap: ()  { Provider.of<MainScreenProvider>(context,listen: false) .changeCatigory(null);
-Navigator.pop(context);
+              onTap: () {
+                Provider.of<MainScreenProvider>(
+                  context,
+                  listen: false,
+                ).changeCatigory(null);
+                Navigator.pop(context);
               },
               contentPadding: const EdgeInsets.all(8),
               leading: const Icon(Icons.home_outlined),
@@ -41,7 +48,10 @@ Navigator.pop(context);
                 "Go To Home",
                 style: theme.textTheme.titleLarge!.copyWith(
                   color: AppColors.primarylight,
-                ),),), ),
+                ),
+              ),
+            ),
+          ),
           Divider(
             thickness: 1,
             color: AppColors.primarylight,
@@ -66,20 +76,21 @@ Navigator.pop(context);
           // Theme Dropdown
           DropdownMenu<ThemeMode>(
             initialSelection: context.watch<ThemeProvider>().mode,
-            onSelected: (ThemeMode ?value) {
-              if(value!=null){
+            onSelected: (ThemeMode? value) {
+              if (value != null) {
                 context.read<ThemeProvider>().changeTheme(value);
               }
-              
             },
             width: 237.w,
 
             textStyle: AppTextStyle.styleS20W500.copyWith(
-              color: AppColors.primarylight, ),
+              color: AppColors.primarylight,
+            ),
 
             trailingIcon: Icon(
               Icons.keyboard_arrow_down,
-              color: AppColors.primarylight),
+              color: AppColors.primarylight,
+            ),
 
             selectedTrailingIcon: Icon(
               Icons.keyboard_arrow_up,
@@ -127,7 +138,6 @@ Navigator.pop(context);
               ),
 
               DropdownMenuEntry<ThemeMode>(
-                
                 value: ThemeMode.dark,
                 label: 'Dark',
                 style: ButtonStyle(
@@ -182,7 +192,6 @@ Navigator.pop(context);
               color: AppColors.primarylight,
             ),
 
-            
             menuStyle: MenuStyle(
               backgroundColor: WidgetStatePropertyAll(AppColors.primarydark),
             ),
@@ -233,4 +242,8 @@ Navigator.pop(context);
               ),
             ],
           ),
-        ],),);}}
+        ],
+      ),
+    );
+  }
+}

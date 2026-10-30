@@ -66,9 +66,10 @@ class HomeCards extends StatelessWidget {
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 10.w),
               child: InkWell(
-                onTap: () => Provider.of<MainScreenProvider>(context,listen: false).changeCatigory(categoriesEnum)
-                 
-                ,
+                onTap: () => Provider.of<MainScreenProvider>(
+                  context,
+                  listen: false,
+                ).changeCatigory(categoriesEnum),
                 child: Container(
                   padding: EdgeInsets.all(0),
                   width: 170.w,
@@ -79,51 +80,52 @@ class HomeCards extends StatelessWidget {
                       alpha: 0.5,
                     ),
                   ),
-                  child: Row(mainAxisAlignment: .spaceBetween,
-                   
+                  child: Row(
+                    mainAxisAlignment: .spaceBetween,
+
                     children: [
                       if (!iseven)
-                       Expanded(
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.all(Radius.circular(55)),
-                          child: CircleAvatar(
-                            radius: 30,
-                            backgroundColor:
-                                context.theme.scaffoldBackgroundColor,
-                            child: Icon(
-                              !iseven
-                                  ? Icons.arrow_back_ios_new_outlined
-                                  : Icons.arrow_forward_ios_outlined,
-                              color: context.theme.colorScheme.secondary,
-                              size: 16.w,
-                            ),
-                          ).allPadding(value: 0),
+                        Expanded(
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.all(Radius.circular(55)),
+                            child: CircleAvatar(
+                              radius: 30,
+                              backgroundColor:
+                                  context.theme.scaffoldBackgroundColor,
+                              child: Icon(
+                                !iseven
+                                    ? Icons.arrow_back_ios_new_outlined
+                                    : Icons.arrow_forward_ios_outlined,
+                                color: context.theme.colorScheme.secondary,
+                                size: 16.w,
+                              ),
+                            ).allPadding(value: 0),
+                          ),
                         ),
-                      ),
                       Text(
                         "View All",
                         style: context.textTheme.labelMedium!.copyWith(
                           color: context.theme.colorScheme.secondary,
                         ),
                       ).symatricPadding(horizontal: 15.w, vertical: 5),
-                      if(iseven)
-                      Expanded(
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.all(Radius.circular(55)),
-                          child: CircleAvatar(
-                            radius: 30,
-                            backgroundColor:
-                                context.theme.scaffoldBackgroundColor,
-                            child: Icon(
-                              !iseven
-                                  ? Icons.arrow_back_ios_new_outlined
-                                  : Icons.arrow_forward_ios_outlined,
-                              color: context.theme.colorScheme.secondary,
-                              size: 16.w,
-                            ),
-                          ).allPadding(value: 0),
+                      if (iseven)
+                        Expanded(
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.all(Radius.circular(55)),
+                            child: CircleAvatar(
+                              radius: 30,
+                              backgroundColor:
+                                  context.theme.scaffoldBackgroundColor,
+                              child: Icon(
+                                !iseven
+                                    ? Icons.arrow_back_ios_new_outlined
+                                    : Icons.arrow_forward_ios_outlined,
+                                color: context.theme.colorScheme.secondary,
+                                size: 16.w,
+                              ),
+                            ).allPadding(value: 0),
+                          ),
                         ),
-                      ),
                     ],
                   ),
                 ),
